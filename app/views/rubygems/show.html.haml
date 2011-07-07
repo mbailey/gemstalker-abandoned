@@ -1,8 +1,14 @@
 %p#notice= notice
 
 %h2
-  - if @rubygem.errors.empty?
-    = @rubygem.name 
-  - else
-    = @rubygem.errors.full_messages.first
+  -if current_user
+    - if current_user.rubygems.exists? :name => @rubygem.name
+      = "You're following " + @rubygem.name
+      = link_to 'unfollow' , 'asas'
+    - else
+      = "Click here to FOLLOW " + @rubygem.name
 
+  - else
+    Sign up to follow deprec!
+    Email:
+    Submit:
