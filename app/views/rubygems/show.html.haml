@@ -1,0 +1,8 @@
+%p#notice= notice
+
+%h2
+  - if @rubygem.errors.empty?
+    = @rubygem.name 
+  - else
+    = @rubygem.errors.full_messages.first
+

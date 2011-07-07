@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Name:</b>
+  <%= @rubygem.name %>
+</p>
+
+<%= link_to 'Snoop', snoop_admin_rubygem_path(@rubygem) %>
+
+<%= render :partial => 'shared/releases', :object => @rubygem.releases %>
+
+<%= link_to 'Edit', edit_admin_rubygem_path(@rubygem) %> |
+<%= link_to 'Back', admin_rubygems_path %>

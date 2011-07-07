@@ -1,0 +1,23 @@
+%h1 Listing follows
+
+%table
+  %tr
+    %th User
+    %th Rubygem
+    %th Disabled
+    %th
+    %th
+    %th
+
+  - @follows.each do |follow|
+    %tr
+      %td= follow.user_id
+      %td= follow.rubygem_id
+      %td= follow.disabled
+      %td= link_to 'Show', follow
+      %td= link_to 'Edit', edit_follow_path(follow)
+      %td= link_to 'Destroy', follow, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Follow', new_follow_path

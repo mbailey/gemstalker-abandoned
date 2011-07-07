@@ -1,0 +1,25 @@
+<h1>Listing rubygems</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Stable</th>
+    <th>Pre</th>
+  </tr>
+
+<% @rubygems.each do |rubygem| %>
+  <tr>
+    <td><%= link_to rubygem.name, [:admin, rubygem] %></td>
+    <td>
+      <%- if rubygem.latest_stable_release %>
+        <%= rubygem.latest_stable_release.version %> [<%= rubygem.latest_stable_release.release_date.to_date %>]
+      <% end %>
+    </td>
+    <td>
+      <%- if rubygem.latest_pre_release %>
+        <%= rubygem.latest_pre_release.version %> [<%= rubygem.latest_pre_release.release_date.to_date %>]
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>

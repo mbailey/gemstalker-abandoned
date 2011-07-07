@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @follow.user_id
+%p
+  %b Rubygem:
+  = @follow.rubygem_id
+%p
+  %b Disabled:
+  = @follow.disabled
+
+= link_to 'Edit', edit_follow_path(@follow)
+\|
+= link_to 'Back', follows_path

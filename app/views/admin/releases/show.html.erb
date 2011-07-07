@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rubygem:</b>
+  <%= @release.rubygem %>
+</p>
+
+<p>
+  <b>Version:</b>
+  <%= @release.version %>
+</p>
+
+<p>
+  <b>Release date:</b>
+  <%= @release.release_date %>
+</p>
+
+<p>
+  <b>Pre:</b>
+  <%= @release.pre %>
+</p>
+
+
+<%= link_to 'Edit', edit_release_path(@release) %> |
+<%= link_to 'Back', releases_path %>

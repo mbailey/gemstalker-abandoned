@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  rubygem: MyString
+  version: MyString
+  release_date: 2011-07-07 12:10:42
+  pre: false
+
+two:
+  rubygem: MyString
+  version: MyString
+  release_date: 2011-07-07 12:10:42
+  pre: false

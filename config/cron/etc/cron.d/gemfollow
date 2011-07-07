@@ -1,0 +1,5 @@
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=mike@bailey.net.au
+HOME=/
+20,50 * * * * root cd /srv/gemfollow/current && /usr/local/bin/rake snoop RAILS_ENV=production
