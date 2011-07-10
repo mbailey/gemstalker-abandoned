@@ -1,5 +1,5 @@
-<%= @follow.user.name %>,
+Guess what!
 
-Thank you for registering!
+<%= @follow.rubygem.name %>-<%= @release.version %> was released on <%= @release.release_date.to_date %>
 
-Edit profile: <%= edit_user_url(@follow.user) %>
+<%= link_to "View Profile", user_url(@follow.user) %>

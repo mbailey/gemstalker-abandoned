@@ -1,5 +1,5 @@
 <p>Hi <%= @follow.user.name %>!</p>
 
-<p><%= @follow.rubygem.name %>-<%= @release.version %> was released at <%= @release.release_date.to_date %></p>
+<p><%= @follow.rubygem.name %>-<%= @release.version %> was released on <%= @release.release_date.to_date %></p>
 
 <p><%= link_to "View Profile", user_url(@follow.user) %></p>
