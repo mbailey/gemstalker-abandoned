@@ -32,4 +32,5 @@ end
 
 after 'deploy:update_code' do
   run "ln -nfs #{shared_path}/system/database.yml #{release_path}/config/database.yml"
+  top.bundle.install
 end
