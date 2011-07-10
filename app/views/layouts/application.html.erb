@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= params[:controller] %>">
+<body class="<%= params[:controller] %>"><img id="bg" src="<%= asset_path 'gemstalk.jpg' %>">
   <%= render :partial => 'shared/header' %>
   <div id="container">
     <% flash.each do |name, msg| %>
