@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "gemstalk@gmail.com"
+  default from: "Gem Stalker <gemstalk@gmail.com>"
 
   def release_notification(follow, release)
     @follow, @release = follow, release
