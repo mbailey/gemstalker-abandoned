@@ -7,3 +7,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function () {
+  $('.clearme').one("focus", function() {
+    $(this).val("");
+  })
+});

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-GemFollow::Application.load_tasks
+GemStalker::Application.load_tasks

@@ -1,4 +1,4 @@
-GemFollow::Application.routes.draw do
+GemStalker::Application.routes.draw do
 
   namespace :admin do
     resources :follows
@@ -9,6 +9,7 @@ GemFollow::Application.routes.draw do
     end
   end
 
+
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
@@ -16,8 +17,13 @@ GemFollow::Application.routes.draw do
   resources :sessions
 
   # root :to => 'admin/rubygems#index'
-  root :to => 'rubygems#show', :name => 'rails'
+  root :to => 'users#home'
 
-  match ':name' => 'rubygems#show', :as => :gem_page
+  resources :follows
+
+  match ':rubygem/follow' => 'follows#create', :as => :follow
+  match ':rubygem/unfollow' => 'follows#destroy', :as => :unfollow
+
+  match ':name' => 'rubygems#show', :as => :rubygem
 
 end

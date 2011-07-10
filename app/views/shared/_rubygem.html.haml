@@ -1,0 +1,15 @@
+%tr
+  %td= link_to rubygem.name, [:admin, rubygem]
+  %td
+    - if rubygem.latest_stable_release
+      = rubygem.latest_stable_release.version 
+      [
+      = rubygem.latest_stable_release.release_date.to_date 
+      ]
+  %td
+    - if rubygem.latest_pre_release
+      = rubygem.latest_pre_release.version 
+      [
+      = rubygem.latest_pre_release.release_date.to_date
+      ]
+

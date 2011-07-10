@@ -1,0 +1,16 @@
+= form_tag('/follows') do |f|
+  - if @rubygem.errors.any?
+    #error_explanation
+      %h2 
+        = pluralize(@rubygem.errors.count, "error") 
+        prohibited this rubygem from being saved:
+        %ul
+        - @rubygem.errors.full_messages.each do |msg|
+          %li= msg
+
+  = hidden_field_tag :rubygem, @rubygem.name
+  .field
+    = text_field_tag :email, 'Email Address', :class => 'clearme'  
+    .actions
+      = submit_tag "Follow #{@rubygem.name}"
+

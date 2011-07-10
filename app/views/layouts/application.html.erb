@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Auth Example</title>
+  <title>GemStalker - Emails alerts when gems released</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= params[:controller] %>">
-  <%= current_user.inspect %>
+  <%= render :partial => 'shared/header' %>
   <div id="container">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>

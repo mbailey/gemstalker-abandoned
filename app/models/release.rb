@@ -7,7 +7,8 @@ class Release < ActiveRecord::Base
 
   def notify_followers
     rubygem.follows.each do |follow|
-      logger.info "Email #{follow.user_email} about release of #{rubygem_name}-#{version}"
+      UserMailer.release_notification(follow, release).deliver
+      # logger.info "Email #{follow.user_email} about release of #{rubygem_name}-#{version}"
     end
   end
 

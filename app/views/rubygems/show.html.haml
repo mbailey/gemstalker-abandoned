@@ -1,14 +1,14 @@
-%p#notice= notice
-
-%h2
-  -if current_user
-    - if current_user.rubygems.exists? :name => @rubygem.name
-      = "You're following " + @rubygem.name
-      = link_to 'unfollow' , 'asas'
-    - else
-      = "Click here to FOLLOW " + @rubygem.name
-
+-if current_user
+  %h1= @rubygem.name
+  - if current_user.rubygems.exists? :name => @rubygem.name
+    = "You're following " + @rubygem.name
+    = link_to 'unfollow' , unfollow_path(@rubygem.name)
   - else
-    Sign up to follow deprec!
-    Email:
-    Submit:
+    = link_to "FOLLOW #{@rubygem.name}", follow_path(@rubygem.name)
+
+- else
+  #box
+    Email me when new
+    %span.rubygem_name= @rubygem.name
+    gems are released!
+    = render :partial => 'shared/follow_form', :object => @rubygem

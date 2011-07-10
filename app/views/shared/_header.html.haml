@@ -1,0 +1,8 @@
+- if current_user
+  #header
+    #logo
+      = link_to 'GemStalker', root_path
+    #account
+      Welcome back,
+      = current_user.email || 'dude'
+      = link_to 'logout', '/logout'
