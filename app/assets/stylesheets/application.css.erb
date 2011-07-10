@@ -1,0 +1,193 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree .
+*/
+
+body {
+  background-color: #4B7399;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+  background-repeat: no-repeat;
+  background-image: url(http://a2.twimg.com/profile_background_images/286992604/gemstalk_right_half.jpg);
+  background-image: url(<%= asset_path 'gemstalk_right_half_1px.jpg' %>);
+}
+
+a img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#container {
+  box-shadow: 0 0 25px #000000;
+  width: 60%;
+  margin: 0 auto;
+  # background-color: #004F6F;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 80px;
+}
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+form label {
+  display: block;
+  margin-bottom: 2px;
+}
+
+form .field, form .actions {
+  margin: 12px 0;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+.error_messages ul {
+  margin: 15px 0;
+}
+
+/* mike */
+#header {
+    color: #333333;
+    background: #111;
+    background: -webkit-gradient(linear,left top,left bottom,from(#333),to(#111));
+    background: -moz-linear-gradient(center top , #333333, #111111) repeat scroll 0 0 transparent;
+background: transparent 9;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#logo {
+  color: #FAFAFA;
+  float: left;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  font-size: 1.5em;
+}
+
+#account {
+  color: #FAFAFA;
+  position: absolute;
+  top: 7px;
+  right: 5px;
+}
+
+span.rubygem_name {
+  font-size: 2em;
+}
+
+form {
+  position: relative;
+}
+
+input[type="text"] {
+  background: none repeat scroll 0 0 #134869;
+  border: 2px solid #00C0FF;
+  border-radius: 5px 5px 5px 5px;
+  color: #FFFFFF;
+  font: 25px/1 "ff-din-round-web-1","ff-din-round-web-2","Helvetica Neue",helvetica,sans-serif;
+  outline: medium none;
+  padding: 5px 8px;
+  text-align: center;
+}
+
+form label {
+  /*-moz-transition: -moz-transform 50ms ease 0s;*/
+  left: 0;
+  line-height: 1;
+  position: absolute;
+  text-transform: uppercase;
+  top: 10px;
+  z-index: 4;
+  text-align: center;
+}
+
+#box {
+  # background-color: #004F6F;
+  # color: #FFF;
+  text-align: center;
+}
+
+form {
+    # background-color: rgba(0, 0, 0, 0.3);
+    # border: 2px solid #00C0FF;
+    # border-radius: 50px 50px 50px 50px;
+    # box-shadow: 0 0 25px #00C0FF;
+    # color: #FFFFFF;
+    font-family: "ff-din-round-web-1","ff-din-round-web-2","Helvetica Neue",helvetica,sans-serif;
+    margin: 10px auto;
+    padding: 15px;
+    opacity: 1;
+    position: relative;
+    text-align: center;
+    width: 500px;
+}
+
+#logo a, #logo a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#top-bar-bg {
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+}
