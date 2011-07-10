@@ -4,3 +4,7 @@ task :snoop => :environment do
     puts "Found #{num_updated.size} new releases of #{rubygem.name}"
   end
 end
+
+task :prune => :environment do
+  Release.last.destroy
+end
