@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+# deps-ubuntu : libxml2-dev libxslt1-dev libmysqlclient-dev sqlite3 libsqlite3-dev
+
 gem 'rails', '3.1.0.rc4'
 
 # Bundle edge Rails instead:
@@ -19,6 +21,8 @@ gem 'jquery-rails'
 
 gem 'haml'
 gem 'haml-rails'
+
+gem "therubyracer", :require => 'v8'
 
 # Use unicorn as the web server
 # gem 'unicorn'
