@@ -1,5 +1,5 @@
 %tr
-  %td= link_to rubygem.name, [:admin, rubygem]
+  %td= link_to rubygem.name, rubygem_path(:name => rubygem.name)
   %td
     - if rubygem.latest_stable_release
       = rubygem.latest_stable_release.version 
