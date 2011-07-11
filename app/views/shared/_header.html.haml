@@ -1,8 +1,8 @@
-- if current_user
-  #header
-    #logo
-      = link_to 'GemStalker', root_path
-      <g:plusone size="small"></g:plusone>
+#header
+  #logo
+    = link_to 'GemStalker', root_path
+    <g:plusone size="small"></g:plusone>
+  - if current_user
     #account
       Welcome back,
       = current_user.email || 'dude'
