@@ -38,6 +38,17 @@ a {
   overflow: hidden;
 }
 
+#flash {
+  height: 30px;
+  width: 60%;
+  margin: 55px auto 20px auto;
+  margin-left: *;
+  margin-right: *;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
 #container {
   box-shadow: 0 0 25px #000000;
   width: 60%;
@@ -45,8 +56,9 @@ a {
   # background-color: #004F6F;
   background-color: #FFF;
   padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 80px;
+  border: solid 2px black;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
 }
 
 #flash_notice, #flash_error, #flash_alert {
@@ -124,16 +136,17 @@ background: transparent 9;
 #logo {
   color: #FAFAFA;
   float: left;
-  position: absolute;
   left: 5px;
   font-size: 1.8em;
   font-weight: bold;
   margin: 10px 0 0 15px;
+  margin-right: 15px;
 }
 
 #account {
   color: #FAFAFA;
   position: absolute;
+  top: 0;
   right: 5px;
   margin: 10px 0 0 5px;
   font-weight: bold;
@@ -141,7 +154,7 @@ background: transparent 9;
 }
 
 span.rubygem_name {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 form {
@@ -183,7 +196,7 @@ form {
     # box-shadow: 0 0 25px #00C0FF;
     # color: #FFFFFF;
     font-family: "ff-din-round-web-1","ff-din-round-web-2","Helvetica Neue",helvetica,sans-serif;
-    margin: 10px auto;
+    margin: 0 auto;
     padding: 15px;
     opacity: 1;
     position: relative;
@@ -203,3 +216,32 @@ position: absolute;
 top: 0;
 left: 0;
 }
+
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 8px 16px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 17px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }

@@ -1,9 +1,14 @@
 #header
   #logo
     = link_to 'GemStalker', root_path
-    <g:plusone size="small"></g:plusone>
+  <g:plusone size="small"></g:plusone>
+
   - if current_user
     #account
       Welcome back,
       = current_user.email || 'dude'
       = link_to 'logout', '/logout'
+.clear
+#flash
+  - flash.each do |name, msg|
+    = content_tag :div, msg, :id => "flash_#{name}" 

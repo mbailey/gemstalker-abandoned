@@ -8,7 +8,15 @@
 
 - else
   #box
-    Email me when new
-    %span.rubygem_name= @rubygem.name
-    gems are released!
-    = render :partial => 'shared/follow_form', :object => @rubygem
+    %span{:style=>"font-size: 1.5em"}
+      Notify me when 
+      - if @rubygem.name == 'rails'
+        %span{:style=>"font-size: 1.2em; font-weight: bold;"} Ruby on Rails 3.1
+        is
+      - else
+        new
+        %span{:style=>"font-size: 1.2em; font-weight: bold;"}
+          = @rubygem.name
+        gems are
+      released!
+      = render :partial => 'shared/follow_form', :object => @rubygem
