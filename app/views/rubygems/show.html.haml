@@ -1,10 +1,16 @@
--if current_user
-  %h1= @rubygem.name
-  - if current_user.rubygems.exists? :name => @rubygem.name
-    = "You're following " + @rubygem.name
+- if current_user and current_user.rubygems.exists?(:name => @rubygem.name)
+  #box
+    %span{:style=>"font-size: 1.5em"}
+      You're following 
+      - if @rubygem.name == 'rails'
+        %span{:style=>"font-size: 1.2em; font-weight: bold;"} Ruby on Rails 3.1
+      - else
+        %span{:style=>"font-size: 1.2em; font-weight: bold;"}
+          = @rubygem.name
+    %br
+    %br
     = link_to 'unfollow' , unfollow_path(@rubygem.name)
-  - else
-    = link_to "FOLLOW #{@rubygem.name}", follow_path(@rubygem.name)
+      
 
 - else
   #box

@@ -9,8 +9,9 @@
           %li= msg
 
   = hidden_field_tag :rubygem, @rubygem.name
-  .field
-    = text_field_tag :email, 'Email Address', :class => 'clearme'  
-    .actions
-      = submit_tag "Follow #{@rubygem.name}", :class => 'button'
+  - if ! current_user
+    .field
+      = text_field_tag :email, 'Email Address', :class => 'clearme'  
+  .actions
+    = submit_tag "Follow #{@rubygem.name}", :class => 'button'
 
