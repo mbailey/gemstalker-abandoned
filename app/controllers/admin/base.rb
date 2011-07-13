@@ -1,4 +1,4 @@
-class Admin::Base < Admin::Base
+class Admin::Base < ApplicationController
   protect_from_forgery
   # before_filter :require_admin
   # session :disabled => false
