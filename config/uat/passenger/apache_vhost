@@ -1,8 +1,9 @@
 <IfModule passenger_module> 
     <VirtualHost *:80>
 
-        ServerName uat.gemstalker.com
-        ServerAlias www.uat.gemstalker.com
+        ServerName gemstalker.com
+        ServerAlias www.gemstalker.com
+        ServerAlias uat.gemstalker.com
 
         # Redirect to canonical hostname
         RewriteEngine On
