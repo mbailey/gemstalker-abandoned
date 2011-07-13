@@ -7,10 +7,10 @@ class FollowsController < ApplicationController
       redirect_to rubygem_path(@rubygem.name), 
         :notice => "That's not a valid email address"
     elsif current_user.rubygems.find_by_name(params[:rubygem]) 
-      redirect_to rubygem_path(@rubygem.name), 
+      redirect_to root_path, 
         :notice => "You were already following #{@rubygem.name}"
     elsif current_user.rubygems << @rubygem 
-      redirect_to rubygem_path(@rubygem.name), 
+      redirect_to root_path, 
         :notice => "We'll email you about new releases of #{@rubygem.name}"
     else
       redirect_to root_url, 
@@ -21,10 +21,10 @@ class FollowsController < ApplicationController
   def destroy
     rubygem = params[:rubygem]
     if ! current_user.rubygems.find_by_name(rubygem) 
-      redirect_to rubygem_path(rubygem), 
+      redirect_to root_path, 
         :notice => "You were not following #{rubygem}"
     elsif current_user.rubygems.find_by_name(rubygem).destroy
-      redirect_to rubygem_path(rubygem), 
+      redirect_to root_path, 
         :notice => "You unfollowed #{rubygem}"
     else
       redirect_to rubygem_path(rubygem), 

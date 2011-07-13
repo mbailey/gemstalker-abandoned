@@ -1,0 +1,14 @@
+.centered_div
+  %h1 You're Following:
+  - if ! @rubygems.blank?
+    %ul.rubygems
+      - @rubygems.each do |rubygem|
+        %li
+          = rubygem.name
+          = link_to image_tag(asset_path('bin.jpg')), unfollow_path(rubygem.name), :class => 'bin'
+  - else
+    %h3
+      No rubygems!
+      Why not start with 
+      = link_to 'Ruby on Rails', follow_path('rails')
+

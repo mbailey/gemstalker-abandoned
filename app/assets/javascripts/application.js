@@ -12,4 +12,15 @@ $(document).ready(function () {
   $('.clearme').one("focus", function() {
     $(this).val("");
   })
+
+  $(".bin").hide();
+  $("ul.rubygems li").hover( 
+   function () {
+      $(this).children('a').show('fast');
+    }, 
+    function () {
+      $(this).children('a').hide('hide');
+    }
+ );
+
 });
