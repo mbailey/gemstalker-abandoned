@@ -1,4 +1,4 @@
-class Admin::FollowsController < ApplicationController
+class Admin::FollowsController < Admin::Base
   # GET /follows
   # GET /follows.json
   def index

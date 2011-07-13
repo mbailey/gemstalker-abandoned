@@ -1,4 +1,4 @@
-class Admin::RubygemsController < ApplicationController
+class Admin::RubygemsController < Admin::Base
 
   def snoop
     @rubygem = Rubygem.find(params[:id])

@@ -1,4 +1,4 @@
-class Admin::ReleasesController < ApplicationController
+class Admin::ReleasesController < Admin::Base
   # GET /releases
   # GET /releases.json
   def index
