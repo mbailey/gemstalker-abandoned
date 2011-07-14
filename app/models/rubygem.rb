@@ -19,7 +19,7 @@ class Rubygem < ActiveRecord::Base
   has_many :users, :through => :follows
 
   has_many :releases,
-    :order => 'release_date desc'
+    :order => 'release_date asc, created_at asc'
 
   has_many :alerts, :through => :releases
 
