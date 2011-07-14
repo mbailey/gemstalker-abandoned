@@ -9,13 +9,17 @@ class Release < ActiveRecord::Base
   after_save :update_alerts
 
   def update_alerts
-    disable_old_alerts
-    create_alerts
+    if Release.
+      where('release_date > ? and rubygem_id = ?', release_date, rubygem_id).
+      blank?
+        disable_old_alerts
+        create_alerts
+    end
   end
 
   def disable_old_alerts
     rubygem.alerts.where('release_date < ?', release_date).each do |alert|
-      alert.update_attributes :disabled => true
+      alert.destroy
     end
   end
 

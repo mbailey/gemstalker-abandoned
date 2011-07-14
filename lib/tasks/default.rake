@@ -8,7 +8,9 @@ end
 
 desc "Destroy latest release"
 task :prune => :environment do
-  Rubygem.all.each {|rubygem| rubygem.releases.last.destroy}
+  Rubygem.all.each { |rubygem| 
+    rubygem.releases.order('release_date desc').limit(5).map(&:destroy)
+  }
 end
 
 desc "List rubygems"
