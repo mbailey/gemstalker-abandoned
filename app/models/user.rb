@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates :email, :presence => true, :email => true
 
+  alias_attribute :name, :email
+
   # We're not asking new users to supply a password
   before_validation(:on => :create) do 
     self.password = self.password_confirmation = 'foobar'

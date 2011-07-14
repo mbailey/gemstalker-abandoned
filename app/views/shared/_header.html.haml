@@ -6,7 +6,7 @@
   - if current_user
     #account
       Welcome back,
-      = current_user.email || 'dude'
+      = current_user.name || 'dude'
       = link_to 'logout', '/logout'
 .clear
 #flash

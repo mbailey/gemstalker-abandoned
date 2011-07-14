@@ -76,7 +76,7 @@ class Admin::UsersController < Admin::Base
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to admin_users_url, notice: "Deleted user #{@user.name}" }
       format.json { head :ok }
     end
   end
