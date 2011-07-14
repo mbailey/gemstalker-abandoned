@@ -1,0 +1,8 @@
+- if current_user && current_user.name == 'mike@bailey.net.au'
+  #admin_menu
+    %h2 Admin
+    %ul
+      %li= link_to 'Alerts', admin_alerts_path
+      %li= link_to 'Users', admin_users_path
+      %li= link_to 'Rubygems', admin_rubygems_path
+

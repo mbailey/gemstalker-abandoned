@@ -1,3 +1,4 @@
+desc "Check for new releases"
 task :snoop => :environment do
   Rubygem.all.each do |rubygem|
     num_updated = rubygem.snoop
@@ -5,6 +6,12 @@ task :snoop => :environment do
   end
 end
 
+desc "Destroy latest release"
 task :prune => :environment do
-  Release.last.destroy
+  Rubygem.all.each {|rubygem| rubygem.releases.last.destroy}
+end
+
+desc "List rubygems"
+task :gems => :environment do
+  puts Rubygem.order('name desc').map(&:name)
 end

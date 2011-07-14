@@ -2,7 +2,6 @@ class FollowsController < ApplicationController
 
   def create
     @rubygem = Rubygem.find_or_create_by_name(params[:rubygem])
-    logger.info current_user.inspect
     if !current_user.errors.empty?
       redirect_to rubygem_path(@rubygem.name), 
         :notice => "That's not a valid email address"

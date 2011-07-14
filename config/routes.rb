@@ -1,12 +1,13 @@
 GemStalker::Application.routes.draw do
 
   namespace :admin do
-    resources :follows
-    resources :users
     resources :rubygems do
       resources :releases
       get 'snoop', :on => :member
     end
+    resources :users
+    resources :follows
+    resources :alerts
   end
 
   get "logout" => "sessions#destroy", :as => "logout"

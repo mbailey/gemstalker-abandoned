@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :follows
   has_many :rubygems, :through => :follows
+  has_many :alerts
+  has_many :releases, :through => :alerts
 
   validates_presence_of :password, :on => :create
   validates :email, :presence => true, :email => true

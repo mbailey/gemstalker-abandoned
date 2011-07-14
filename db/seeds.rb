@@ -6,4 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Rubygem.create([{ name: 'rails' }, { name: 'deprec' }])
+Rubygem.create([{ name: 'gemstalk' }, { name: 'rails' }])
+
+user = User.create(:email => 'mike@bailey.net.au')
+
+user.rubygems << Rubygem.find_by_name('gemstalk')

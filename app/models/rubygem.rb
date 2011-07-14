@@ -21,7 +21,10 @@ class Rubygem < ActiveRecord::Base
   has_many :releases,
     :order => 'release_date desc'
 
+  has_many :alerts, :through => :releases
+
   validates_presence_of :name
+  validates_uniqueness_of :name
   validates_with RubygemValidator 
 
   def snoop

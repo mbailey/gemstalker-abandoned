@@ -1,0 +1,25 @@
+%h1 Listing alerts
+
+%table
+  %tr
+    %th Rubygem
+    %th Release
+    %th Date
+    %th Release Date
+    %th User
+    %th Notified?
+
+  - @alerts.each do |alert|
+    %tr
+      %td= alert.rubygem_name
+      %td= alert.rubygem_version
+      %td= alert.created_at.to_date
+      %td= alert.release_date
+      %td= alert.user.name
+      %td= alert.user_notified ? alert.user_notified.to_date : 'no'
+      %td= link_to 'Show', [:admin, alert]
+      %td= link_to 'Edit', edit_admin_alert_path(alert)
+      %td= link_to 'Destroy', [:admin, alert], :confirm => 'Are you sure?', :method => :delete
+
+%br
+

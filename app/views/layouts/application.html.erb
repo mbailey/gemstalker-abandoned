@@ -8,6 +8,7 @@
 </head>
 <body class="<%= params[:controller] %>"><img id="bg" src="<%= asset_path 'gemstalk.jpg' %>">
   <%= render :partial => 'shared/header' %>
+  <%= render :partial => 'admin/shared/admin_menu' %>
   <div id="container">
     <%= yield %>
   </div>
