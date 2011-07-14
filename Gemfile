@@ -25,7 +25,7 @@ gem 'haml-rails'
 gem "therubyracer", :require => 'v8'
 
 gem 'rails-backup-migrate'
-gem 'deprec', :require => 'deprec/rake'
+gem 'deprec', :require => false # 'deprec/rake'
 
 # Use unicorn as the web server
 # gem 'unicorn'
