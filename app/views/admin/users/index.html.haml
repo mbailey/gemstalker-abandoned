@@ -11,7 +11,7 @@
   - @users.each do |user|
     %tr
       %td= user.email
-      %td= user.rubygems.collect{|r| r.name}.join
+      %td= user.rubygems.collect{|r| r.name}.join(' ')
       %td= link_to 'Show', [:admin, user]
       %td= link_to 'Edit', edit_admin_user_path(user)
       %td= link_to 'Destroy', [:admin, user], :confirm => 'Are you sure?', :method => :delete
