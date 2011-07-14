@@ -8,9 +8,9 @@ end
 class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
   has_secure_password
-  has_many :follows
+  has_many :follows, :dependent => :destroy
   has_many :rubygems, :through => :follows
-  has_many :alerts
+  has_many :alerts, :dependent => :destroy
   has_many :releases, :through => :alerts
 
   validates_presence_of :password, :on => :create

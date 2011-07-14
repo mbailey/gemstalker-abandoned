@@ -11,8 +11,8 @@
 
   - @follows.each do |follow|
     %tr
-      %td= follow.user_id
-      %td= follow.rubygem_id
+      %td= follow.user.name
+      %td= follow.rubygem.name
       %td= follow.disabled
       %td= link_to 'Show', follow
       %td= link_to 'Edit', edit_follow_path(follow)
