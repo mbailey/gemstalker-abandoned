@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:bulletproofnetworks/clip.git
+  revision: 5143810df8cb198207f11e47b44bc3a109b1cb0c
+  specs:
+    clip (0.0.2)
+      capistrano (>= 2.6.0)
+      capistrano-ext (>= 1.2.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -47,9 +55,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.1)
-    deprec (2.2.3)
-      capistrano (> 2.5.0)
-      capistrano-ext (>= 1.2.1)
     erubis (2.7.0)
     execjs (1.2.0)
       multi_json (~> 1.0)
@@ -106,8 +111,6 @@ GEM
       activesupport (= 3.1.0.rc4)
       bundler (~> 1.0)
       railties (= 3.1.0.rc4)
-    rails-backup-migrate (0.0.6)
-      activerecord (>= 2.3)
     railties (3.1.0.rc4)
       actionpack (= 3.1.0.rc4)
       activesupport (= 3.1.0.rc4)
@@ -148,15 +151,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  clip!
   coffee-script
-  deprec
   haml
   haml-rails
   jquery-rails
   mechanize
   mysql2 (>= 0.3)
   rails (= 3.1.0.rc4)
-  rails-backup-migrate
   responsalizr
   sass-rails (~> 3.1.0.rc)
   sqlite3

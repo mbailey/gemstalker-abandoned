@@ -24,14 +24,11 @@ gem 'haml-rails'
 
 gem "therubyracer", :require => 'v8'
 
-gem 'rails-backup-migrate'
-gem 'deprec', :require => 'deprec/rake'
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+# Load capistrano and rake tasks
+gem 'clip', :git => 'git@github.com:bulletproofnetworks/clip.git'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
