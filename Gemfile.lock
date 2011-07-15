@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:bulletproofnetworks/clip.git
-  revision: 5143810df8cb198207f11e47b44bc3a109b1cb0c
+  revision: 5e7aea7dce9b707c358872ef77c0c3cc9b3bfea2
   specs:
     clip (0.0.2)
       capistrano (>= 2.6.0)
