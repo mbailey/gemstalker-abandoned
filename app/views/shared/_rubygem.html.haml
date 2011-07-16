@@ -1,5 +1,6 @@
 %tr
   %td= link_to rubygem.name, rubygem_path(:name => rubygem.name)
+  %td= rubygem.follows.count
   %td
     - if rubygem.latest_stable_release
       = rubygem.latest_stable_release.version 
