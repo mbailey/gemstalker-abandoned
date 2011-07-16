@@ -22,7 +22,7 @@ class FollowsController < ApplicationController
     if ! current_user.rubygems.find_by_name(rubygem) 
       redirect_to root_path, 
         :notice => "You were not following #{rubygem}"
-    elsif current_user.rubygems.find_by_name(rubygem).destroy
+    elsif current_user.rubygems.delete(Rubygem.find_by_name(rubygem))
       redirect_to root_path, 
         :notice => "You unfollowed #{rubygem}"
     else
