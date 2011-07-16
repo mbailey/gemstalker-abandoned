@@ -18,7 +18,7 @@ class Rubygem < ActiveRecord::Base
   has_many :follows
   has_many :users, :through => :follows
 
-  has_many :releases, :dependant => :destroy
+  has_many :releases, :dependent => :destroy
 
   has_many :alerts, :through => :releases
 
