@@ -9,7 +9,7 @@ class Admin::RubygemsController < Admin::Base
   # GET /rubygems
   # GET /rubygems.json
   def index
-    @rubygems = Rubygem.all
+    @rubygems = Rubygem.order(:name).includes(:releases)
 
     respond_to do |format|
       format.html # index.html.erb
