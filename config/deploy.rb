@@ -1,4 +1,5 @@
 require 'bundler/capistrano'
+equire 'deprec/cap/callbacks/asset_pipeline'
 require 'capistrano/ext/multistage'
 
 set :stages, %w( uat production )
