@@ -13,6 +13,14 @@ set :repository,  "git@github.com:/mbailey/gemstalker.git"
 
 # set :gateway, 'd.failmode.com'
 
+namespace :deprec do
+  namespace :mysql do
+    task :backup do
+      deprec2.rake_remote 'deprec:db:backup'
+    end
+  end
+end
+
 set :scm, :git
 set :deploy_via, :remote_cache
 
@@ -35,3 +43,4 @@ after 'deploy:update_code' do
   run "ln -nfs #{shared_path}/system/database.yml #{release_path}/config/database.yml"
   # top.bundle.install
 end
+
