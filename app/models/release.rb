@@ -3,7 +3,7 @@ class Release < ActiveRecord::Base
 
   belongs_to :rubygem
 
-  has_many :alerts
+  has_many :alerts, :dependent => :destroy
   has_many :users, :through => :alerts
 
   after_save :update_alerts
