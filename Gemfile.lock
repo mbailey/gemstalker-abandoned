@@ -47,11 +47,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.1)
-    deprec (3.1.0.rc2)
+    deprec (3.1.0.rc10)
       capistrano (>= 2.6.0)
       capistrano-ext (>= 1.2.1)
-      deprec-core (>= 3.1.0)
-    deprec-core (3.1.1)
+      deprec-core (>= 3.1.4)
+    deprec-core (3.1.5)
     erubis (2.7.0)
     execjs (1.2.0)
       multi_json (~> 1.0)
@@ -117,7 +117,6 @@ GEM
       thor (~> 0.14.6)
     rake (0.9.2)
     rdoc (3.8)
-    responsalizr (1.0.2)
     sass (3.1.4)
     sass-rails (3.1.0.rc.4)
       actionpack (~> 3.1.0.rc1)
@@ -149,14 +148,13 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script
-  deprec (~> 3.1.0.pre2)
+  deprec (= 3.1.0.rc10)
   haml
   haml-rails
   jquery-rails
   mechanize
   mysql2 (>= 0.3)
   rails (= 3.1.0.rc4)
-  responsalizr
   sass-rails (~> 3.1.0.rc)
   sqlite3
   therubyracer

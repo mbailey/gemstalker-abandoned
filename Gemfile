@@ -10,8 +10,6 @@ gem 'rails', '3.1.0.rc4'
 gem 'sqlite3'
 gem 'mysql2', '>=0.3'
 
-gem 'responsalizr'
-
 # Asset template engines
 gem 'sass-rails', "~> 3.1.0.rc"
 gem 'coffee-script'
@@ -30,7 +28,7 @@ gem "therubyracer", :require => 'v8'
 # Load capistrano and rake tasks
 # gem 'clip', :git => 'git@github.com:bulletproofnetworks/clip.git'
 #
-gem 'deprec', '~>3.1.0.pre2'
+gem 'deprec', '3.1.0.rc10'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
