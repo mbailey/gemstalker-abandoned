@@ -11,7 +11,7 @@ set :application, "gemstalker"
 set :deploy_to, "/srv/#{application}" # append -RAILS_ENV ?
 set :repository,  "git@github.com:/mbailey/gemstalker.git"
 
-# set :gateway, 'd.failmode.com'
+set :gateway, 'd.failmode.com'
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
