@@ -28,7 +28,7 @@ gem "therubyracer", :require => 'v8'
 # Load capistrano and rake tasks
 # gem 'clip', :git => 'git@github.com:bulletproofnetworks/clip.git'
 #
-gem 'deprec', '3.1.0.rc10'
+gem 'deprec', '3.1.0.rc11'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
