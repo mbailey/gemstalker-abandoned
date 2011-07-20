@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110714035359) do
+ActiveRecord::Schema.define(:version => 20110719101237) do
 
   create_table "alerts", :force => true do |t|
     t.integer  "user_id"
@@ -19,12 +19,20 @@ ActiveRecord::Schema.define(:version => 20110714035359) do
     t.boolean  "disabled"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "notification_id"
   end
 
   create_table "follows", :force => true do |t|
     t.integer  "user_id"
     t.integer  "rubygem_id"
     t.boolean  "disabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notifications", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,5 +1,4 @@
 class Release < ActiveRecord::Base
-  validates_uniqueness_of :version, :scope => :rubygem_name
 
   belongs_to :rubygem
 
@@ -8,12 +7,22 @@ class Release < ActiveRecord::Base
 
   after_save :update_alerts
 
+  scope :stable, where(:pre => false)
+  scope :pre, where(:pre => true)
+  scope :first, order('release_date desc').limit(1)
+  scope :last, order('release_date asc').limit(1)
+
+  validates_uniqueness_of :version, :scope => :rubygem_name
+
+  def newest?
+    Release.where('release_date > ? and rubygem_id = ?', 
+      release_date, rubygem_id).blank?
+  end
+
   def update_alerts
-    if Release.
-      where('release_date > ? and rubygem_id = ?', release_date, rubygem_id).
-      blank?
-        disable_old_alerts
-        create_alerts
+    if newest? && release_date > 1.day.ago
+      disable_old_alerts
+      create_alerts
     end
   end
 

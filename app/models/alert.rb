@@ -2,22 +2,11 @@ class Alert < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :release
+  belongs_to :notification
 
   validates_uniqueness_of :user_id, 
     :scope => :release_id,
     :message => "user alert already exists for to this release"
-
-  after_save do
-    release.disable_old_alerts
-  end
-
-  def enable
-    update_attributes :disabled => false
-  end
-
-  def disable
-    update_attributes :disabled => true
-  end
 
   def user_email
     user.email
@@ -40,4 +29,5 @@ class Alert < ActiveRecord::Base
   rescue
     nil
   end
+
 end

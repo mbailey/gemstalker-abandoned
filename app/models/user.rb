@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :rubygems, :through => :follows
   has_many :alerts, :dependent => :destroy
   has_many :releases, :through => :alerts
+  has_many :notifications, :dependent => :destroy
 
   validates_presence_of :password, :on => :create
   validates :email, :presence => true, :email => true

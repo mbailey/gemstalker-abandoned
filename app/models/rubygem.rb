@@ -35,6 +35,10 @@ class Rubygem < ActiveRecord::Base
     releases.order('release_date desc').where(:pre => false).first
   end
 
+  def latest_stable_release
+    releases.order('release_date desc').where(:pre => false).first
+  end
+
   def latest_pre_release
     releases.order('release_date desc').where(:pre => true).first
   end

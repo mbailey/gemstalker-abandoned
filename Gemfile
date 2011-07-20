@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source :rubygems
 
 # deps-ubuntu : libxml2-dev libxslt1-dev libmysqlclient-dev sqlite3 libsqlite3-dev
 

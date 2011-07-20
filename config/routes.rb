@@ -1,5 +1,7 @@
 GemStalker::Application.routes.draw do
 
+  resources :notifications
+
   namespace :admin do
     resources :rubygems do
       resources :releases
