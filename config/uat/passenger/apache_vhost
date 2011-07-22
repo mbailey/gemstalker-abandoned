@@ -1,9 +1,7 @@
 <IfModule passenger_module> 
     <VirtualHost *:80>
 
-        ServerName gemstalker.com
-        ServerAlias www.gemstalker.com
-        ServerAlias uat.gemstalker.com
+        ServerName uat.gemstalker.com
 
         # Redirect to canonical hostname
         RewriteEngine On
@@ -11,8 +9,8 @@
         RewriteCond %{HTTP_HOST}    !^$
         RewriteRule ^/?(.*)         http://uat.gemstalker.com/$1 [L,R=301,NE]
 
-        DocumentRoot "/srv/gemstalker/current/public"
-        <Directory "/srv/gemstalker/current/public">
+        DocumentRoot /srv/gemstalker/current/public
+        <Directory /srv/gemstalker/current/public>
             Allow from all
             Options -MultiViews
         </Directory>
@@ -22,6 +20,23 @@
 	  
         RackEnv production
         RailsEnv production
+
+        # Enable caching of assets containing a fingerprint
+        # Browsers need never check for newer versions of an
+        # asset because the fingerprint would be different.
+        <Directory /srv/gemstalker/current/public/public/assets>
+          <FilesMatch "[^.]+-[a-z0-9]{32}\.">
+              # Add far-future expiration dates
+              <IfModule mod_expires.c>
+                  ExpiresActive On
+                  ExpiresDefault "access plus 10 years"
+              </IfModule>
+              # Disable ETags
+              <IfModule mod_headers.c>
+                  Header unset "ETag"
+              </IfModule>
+            </FilesMatch>
+        </Directory>
 
         # Check for maintenance file and redirect all requests
         RewriteEngine On

@@ -1,16 +1,11 @@
 require 'bundler/capistrano'
 
-# require 'deprec'
-require 'deprec/recipes/apache'
-require 'deprec/recipes/passenger'
-require 'deprec/recipes/mysql'
-require 'deprec/recipes/mri'
-
 require 'deprec/callbacks/asset_pipeline'
 require 'deprec/callbacks/passenger'
 require 'deprec/callbacks/deploy'
 
 require 'capistrano/ext/multistage'
+
 set :stages, %w( uat production )
 set :default_stage, 'uat'
 
